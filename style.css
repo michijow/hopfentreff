@@ -1,22 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+html, body {
+    height: 100%;
     margin: 0;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
 .container {
-    text-align: center;
+    width: 100%;  /* Make sure the container spans full width */
+    height: 100%; /* Ensure the container fills the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #countdown {
-    font-size: 2rem;
-    margin-top: 20px;
+    font-size: 10em;
+    font-weight: bold;
+    text-align: center;
 }
 
-span {
-    font-weight: bold;
+.number {
+    font-size: 1.5em; /* Larger numbers */
+}
+
+.label {
+    font-size: 0.5em; /* Smaller labels */
 }
