@@ -57,7 +57,7 @@
 </head>
 
 
-  <body class="layout--home  ">
+  <body class="layout--page  ">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -71,7 +71,7 @@
   <div class="navigation-wrapper">
     <a href="#menu-toggle" id="menu-toggle">Menu</a>
     <nav id="primary-nav" class="site-nav animated drop">
-      <ul><li><a href="/">Dahoam</a></li><li><a href="/posts/">Treffen</a></li><li><a href="/about/">Über uns</a></li></ul>
+      <ul><li><a href="/">Dahoam</a></li><li><a href="/treffen/">Hopfentreffen</a></li><li><a href="/about/">Über uns</a></li></ul>
     </nav>
   </div><!-- /.navigation-wrapper -->
 
@@ -107,20 +107,17 @@
       </header>
       <div class="page-content">
         <body>
-    <div class="container" style="display: flex; justify-content: center;">
-        <div id="countdown" style="font-size: 3em; font-weight: bold;">
-            <span class="number" id="days" style="font-size: 1.5em;"></span> <span class="label" style="font-size: 0.5em;">T</span>
-            <span class="number" id="hours" style="font-size: 1.5em;"></span> <span class="label" style="font-size: 0.5em;">S</span>
-            <span class="number" id="minutes" style="font-size: 1.5em;"></span> <span class="label" style="font-size: 0.5em;">M</span>
-            <span class="number" id="seconds" style="font-size: 1.5em;"></span> <span class="label" style="font-size: 0.5em;">S</span>
+    <div class="container">
+        <div id="countdown">
+            <span class="number" id="days"></span> <span class="label">T</span>
+            <span class="number" id="hours"></span> <span class="label">S</span>
+            <span class="number" id="minutes"></span> <span class="label">M</span>
+            <span class="number" id="seconds"></span> <span class="label">S</span>
         </div>
     </div>
+    <link rel="stylesheet" href="styleTimer.css" />
     <script src="script.js"></script>
 </body>
-
-
-
-<div class="entries-list"></div>
 
 
         

@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#countdown {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.number {
+    font-size: 1.5em;
+}
+
+.label {
+    font-size: 0.5em;
+}
