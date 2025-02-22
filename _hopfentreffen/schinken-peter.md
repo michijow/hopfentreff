@@ -30,8 +30,8 @@ Wirtshaus in Giesing.
     </div>
 </div>
 
-<div class="category" data-category="käsepätzle">
-    <h3 class="category-title">Käsepätzle</h3>
+<div class="category" data-category="käsespätzle">
+    <h3 class="category-title">Käsespätzle</h3>
     <div class="rating">
         {% for i in (1..5) %}
             <span class="cheese {% if i <= page.kaese_rating %}selected{% endif %}">&#x1F9C0;</span>
