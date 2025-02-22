@@ -1,5 +1,5 @@
 ---
-title: Schinken-P.
+title: Schinken-Peter
 image: 
   path: /images/beer.jpg
   thumbnail: /images/beer_tn.jpg
