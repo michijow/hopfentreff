@@ -6,7 +6,7 @@ image:
   caption: "Photo from [Pexels](https://www.pexels.com)"
 #share: "false"
 #comments: "false"
-bier_rating: 3
+bier_rating: 4
 kaese_rating: 0
 treffen_rating: 5
 ---
