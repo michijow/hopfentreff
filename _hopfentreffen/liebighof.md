@@ -2,7 +2,7 @@
 title: Liebighof
 image: 
   path: /images/beer.jpg
-  thumbnail: /images/beer_tn.jpg
+  thumbnail: /images/PXL_20250306_174605190.jpg
   caption: "Photo from [Pexels](https://www.pexels.com)"
 #share: "false"
 #comments: "false"
