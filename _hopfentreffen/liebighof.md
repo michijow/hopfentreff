@@ -11,7 +11,7 @@ kaese_rating: 0
 treffen_rating: 5
 ---
 
-Wirtshaus in Giesing.
+Wirtshaus im Lehel.
 
 # Bewertung
 
