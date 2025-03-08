@@ -1,17 +1,17 @@
 ---
-title: Schinken-Peter
+title: Liebighof
 image: 
-  path: /images/beer.jpg
-  thumbnail: /images/beer_tn.jpg
+  path: /images/PXL_20250306_174605190.jpg
+  thumbnail: /images/PXL_20250306_174605190.jpg
   caption: "Photo from [Pexels](https://www.pexels.com)"
 #share: "false"
-comments: "true"
-bier_rating: 3
-kaese_rating: 3
+#comments: "false"
+bier_rating: 4
+kaese_rating: 0
 treffen_rating: 5
 ---
 
-Wirtshaus in Giesing.
+Wirtshaus im Lehel.
 
 # Bewertung
 
