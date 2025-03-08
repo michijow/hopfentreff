@@ -5,7 +5,7 @@ image:
   thumbnail: /images/beer_tn.jpg
   caption: "Photo from [Pexels](https://www.pexels.com)"
 #share: "false"
-#comments: "false"
+comments: "true"
 bier_rating: 3
 kaese_rating: 3
 treffen_rating: 5
