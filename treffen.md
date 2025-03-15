@@ -1,7 +1,7 @@
 ---
 title: Hopfentreffen
 layout: collection
-permalink: /treffen/
+permalink: /hopfentreffen/
 collection: hopfentreffen
 entries_layout: grid
 sort_by: date

@@ -22,7 +22,7 @@ description: "Bier rein. Glücklich sein."
 baseurl: # the subpath of your site, e.g. "/blog"
 url: "hopfentreff.de"
 logo: "/images/logo.png"
-date_format: "%B %-d, %Y"
+date_format: "%d.%m.%Y"
 read_time: # reading time estimates, e.g. true
 words_per_minute: # 200
 mathjax:
