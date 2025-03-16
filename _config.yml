@@ -20,7 +20,7 @@ locale: de-DE
 title: "Hopfentreff"
 description: "Bier rein. Glücklich sein."
 baseurl: # the subpath of your site, e.g. "/blog"
-url: "hopfentreff.de"
+url: "https://hopfentreff.de"
 logo: "/images/logo.png"
 date_format: "%d.%m.%Y"
 read_time: # reading time estimates, e.g. true
