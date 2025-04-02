@@ -1,8 +1,8 @@
 ---
 title: Coming soon
 image: 
-  path: 
-  thumbnail: 
+  path: /images/beer.jpg
+  thumbnail: /images/beer_tn.jpg
   caption: "coming soon"
 #share: "false"
 #comments: "false"
