@@ -1,5 +1,5 @@
 ---
-title: Coming soon
+title: Drei Mühlen
 image: 
   path: /images/beer.jpg
   thumbnail: /images/beer_tn.jpg
@@ -11,4 +11,4 @@ kaese_rating: 0
 treffen_rating: 0
 ---
 
-Wirtshaus im ????
+Wirtshaus in der Isarvorstadt
