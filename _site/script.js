@@ -5,15 +5,23 @@ function getFirstThursdayOfMonth(year, month) {
     return new Date(year, month, firstThursday, 18, 45, 0);
 }
 
+// Optional: Set a custom target date here (year, monthIndex (0–11), day, hour, minute)
+let customDate = new Date(2025, 3, 11, 18, 45, 0); // May 10, 2025 at 8:00 PM
+
 function updateCountdown() {
     const now = new Date();
-    let firstThursday = getFirstThursdayOfMonth(now.getFullYear(), now.getMonth());
+    let targetDate = null;
 
-    if (firstThursday < now) {
-        firstThursday = getFirstThursdayOfMonth(now.getFullYear(), now.getMonth() + 1);
+    if (customDate && customDate > now) {
+        targetDate = customDate;
+    } else {
+        targetDate = getFirstThursdayOfMonth(now.getFullYear(), now.getMonth());
+        if (targetDate < now) {
+            targetDate = getFirstThursdayOfMonth(now.getFullYear(), now.getMonth() + 1);
+        }
     }
 
-    const diff = firstThursday - now;
+    const diff = targetDate - now;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
