@@ -1,8 +1,8 @@
 ---
 title: Drei Mühlen
 image: 
-  path: /images/beer.jpg
-  thumbnail: /images/beer_tn.jpg
+  path: /images/PXL_20250411_173303230.jpg
+  thumbnail: /images/PXL_20250411_173303230.jpg
   caption: "coming soon"
 #share: "false"
 #comments: "false"
