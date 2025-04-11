@@ -2,18 +2,18 @@
 layout: page
 permalink: /hopfenstrudl/
 ---
-Hopfen-Strudl
+##Hopfen-Strudl
 
-Ziel des Spiels
+### Ziel des Spiels
 
 Erreiche als Erster das Zentrum des Spielfelds – den „Großen Hopfen“ – und werde zum „Hopfenmeister“.
 
-## 1. Start
+### 1. Start
 
 Alle Teilnehmenden beginnen beim ersten Hopfen des Spielfelds.
 Kein Abkürzen: Das Spiel verläuft immer entlang der vorgegebenen Pfeile.
 
-## 2. Runden und Bewegung
+### 2. Runden und Bewegung
 
 In jeder Runde (bei jedem Treffen) kannst du pro erfülltem Kriterium eine Hopfendolde streichen und dich so ein Feld weiter in Richtung Zentrum bewegen:
 
@@ -25,19 +25,19 @@ Neuzugang: Bringe jemanden mit, der bisher noch nie beim Treffen war. Für das �
 * Dolde im Lokal: Entdecke im Lokal eine echte Hopfendolde oder ein Hopfen-Symbol (z. B. in der Deko) und kassiere eine Dolde.
 * Goldene Regel: es wird spannend, sie wird noch festgelegt
 
-## 3. Ereignisdolden
+### 3. Ereignisdolden
 
 Entlang des Weges gibt es farbig hinterlegte Sonderdolden mit besonderen Aufgaben:
 
 * Grüne Dolde: Schaffst du es, bei drei Versuchen den Bierdeckel von der Tischkante weg auf dein Glas zu flippen, sodass das Hopfentreff-Logo oben zu sehen ist, wird dein gesamter Hopfengenuss des Abends von der Gruppe bezahlt.
 * Goldene Dolde: überlege dir eine spannende neue Goldene Regel, die zur allgemeine Unterhaltung beim Hopfen-Strudel beiträgt. Die alte goldene Regel entfällt.
 
-## 4. Fortsetzung über mehrere Treffen
+### 4. Fortsetzung über mehrere Treffen
 
 Notiert eure Position: Jede:r merkt sich das zuletzt erreichte Feld. Beim nächsten Hopfentreff macht ihr genau dort weiter.
 Wer einmal fehlt, bleibt einfach auf dem aktuellen Feld stehen.
 
-## 5. Spielende
+### 5. Spielende
 
 Sobald eine Person den „Großen Hopfen“ im Zentrum erreicht, endet das Spiel. Die siegreiche Person wird zum „Hopfenmeister“ gekürt und darf sich über eine kleine Überraschung freuen.
 
