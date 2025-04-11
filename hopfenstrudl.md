@@ -3,6 +3,8 @@ layout: page
 permalink: /hopfenstrudl/
 ---
 
+Hopfen-Strudl
+
 ### Ziel des Spiels
 
 Erreiche als Erster das Zentrum des Spielfelds – den „Großen Hopfen“ – und werde zum „Hopfenmeister“.
