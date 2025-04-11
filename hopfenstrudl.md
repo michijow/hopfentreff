@@ -2,7 +2,6 @@
 layout: page
 permalink: /hopfenstrudl/
 ---
-
 Hopfen-Strudl
 
 ### Ziel des Spiels
@@ -21,7 +20,7 @@ In jeder Runde (bei jedem Treffen) kannst du pro erfülltem Kriterium eine Hopfe
 * Anwesenheit: Schee, dassd’ da bist! Wer anwesend ist, darf eine Dolde streichen.
 * Bier trinken: Egal ob klassisch oder alkoholfrei – ein Bier bringt dir eine Dolde. Spezialbier (z. B. Craft-Bier, besonderes Saisonbier): Dafür gibt’s sogar 2 Dolden.
 * Geselligkeit: Bringe die ganze Runde zum Lachen – dafür gibt’s eine weitere Dolde.
-Neuzugang: Bringe jemanden mit, der bisher noch nie beim Treffen war. Für das „Anwerben“ eines neuen Hopfen-Mitglieds gibt’s eine Dolde.
+* Neuzugang: Bringe jemanden mit, der bisher noch nie beim Treffen war. Für das „Anwerben“ eines neuen Hopfen-Mitglieds gibt’s eine Dolde.
 * Sorge für volle Bäuche: Bestelle einen Kaiserschmarren (oder eine andere Spezialität) für die Runde und erhalte eine Dolde.
 * Dolde im Lokal: Entdecke im Lokal eine echte Hopfendolde oder ein Hopfen-Symbol (z. B. in der Deko) und kassiere eine Dolde.
 * Goldene Regel: es wird spannend, sie wird noch festgelegt
