@@ -2,7 +2,6 @@
 layout: page
 permalink: /hopfenstrudl/
 ---
-## Hopfen-Strudl
 
 ### Ziel des Spiels
 
