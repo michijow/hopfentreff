@@ -6,7 +6,7 @@ function getFirstThursdayOfMonth(year, month) {
 }
 
 // Optional: Set a custom target date here (year, monthIndex (0–11), day, hour, minute)
-let customDate = new Date(2025, 11, 17, 18, 00, 0); // May 10, 2025 at 8:00 PM
+let customDate = new Date(2026, 0, 15, 18, 30, 0); // May 10, 2025 at 8:00 PM
 
 function updateCountdown() {
     const now = new Date();
