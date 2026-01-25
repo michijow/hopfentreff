@@ -24,6 +24,26 @@
   margin-bottom: 5px;
 }
 
+#lives.flash {
+  animation: flash 0.5s;
+}
+
+#lives.gain {
+  animation: gain 0.5s;
+}
+
+@keyframes flash {
+  0% { color: red; transform: scale(1.2); }
+  50% { color: red; transform: scale(1.2); }
+  100% { color: #333; transform: scale(1); }
+}
+
+@keyframes gain {
+  0% { color: green; transform: scale(1.2); }
+  50% { color: green; transform: scale(1.2); }
+  100% { color: #333; transform: scale(1); }
+}
+
 #game-over, #start-screen {
   position: absolute;
   top: 50%;
@@ -32,8 +52,10 @@
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
+  width: 400px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 #start-screen h2 {

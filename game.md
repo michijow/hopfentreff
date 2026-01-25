@@ -10,13 +10,13 @@ permalink: /game/
     <div id="score">Punkte: 0</div>
     <div id="lives">Leben: 3</div>
     <div id="game-over" style="display: none;">
-      <h2>Game Over</h2>
+      <h2>Verloren</h2>
       <button id="restart-btn">Nochmal</button>
     </div>
     <div id="start-screen">
       <h2>Beer Runner</h2>
-      <p>Spring über Bierflaschen und Fässer! Sammle Hopfen für Extraleben, Bier für Punkte!</p>
-      <p>Drücke LEERTASTE zum Springen, PFEIL NACH UNTEN zum Ducken.</p>
+      <p>Vorsicht vorm durstigen Bayern und fliegenden Würsten! Sammle Brezeln für Extraleben!</p>
+      <p>Drücke LEERTASTE zum Springen.</p>
       <button id="start-btn">Start</button>
     </div>
   </div>

@@ -1,0 +1,47 @@
+<svg width="48" height="106" viewBox="40 14 48 106"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Hut -->
+  <polygon points="40,32 88,32 80,20 48,20"
+           fill="#3b4a2f"/>
+  <polygon points="52,20 76,20 72,14 56,14"
+           fill="#2b3622"/>
+
+  <!-- Kopf -->
+  <circle cx="64" cy="44" r="14" fill="#f2c9a1"/>
+
+  <!-- Augen -->
+  <rect x="56" y="40" width="4" height="2" fill="#3b2b1a"/>
+  <rect x="68" y="40" width="4" height="2" fill="#3b2b1a"/>
+  <path d="M54 38 L60 40" stroke="#3b2b1a" stroke-width="2"/>
+  <path d="M70 40 L76 38" stroke="#3b2b1a" stroke-width="2"/>
+
+  <!-- Mund -->
+  <path d="M58 48 Q64 52 70 48"
+        stroke="#3b2b1a" stroke-width="2" fill="none"/>
+
+  <!-- Körper -->
+  <rect x="46" y="56" width="36" height="26" rx="4"
+        fill="#ffffff" stroke="#3b2b1a" stroke-width="2"/>
+
+  <!-- Hosenträger -->
+  <path d="M48 80 L56 56" stroke="#5b3a1a" stroke-width="4"/>
+  <path d="M80 80 L72 56" stroke="#5b3a1a" stroke-width="4"/>
+
+  <!-- Arme verschränkt -->
+  <path d="M44 72 Q64 84 84 72"
+        stroke="#f2c9a1" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Hose -->
+  <rect x="48" y="80" width="32" height="20" fill="#7b4a24"/>
+  <rect x="48" y="80" width="32" height="6" fill="#5b3a1a"/>
+
+  <!-- Beine -->
+  <rect x="52" y="100" width="8" height="16" fill="#f2c9a1"/>
+  <rect x="68" y="100" width="8" height="16" fill="#f2c9a1"/>
+
+  <!-- Schuhe -->
+  <rect x="50" y="114" width="12" height="6" fill="#2b2b2b"/>
+  <rect x="66" y="114" width="12" height="6" fill="#2b2b2b"/>
+
+</svg>

@@ -7,6 +7,12 @@ const startScreenEl = document.getElementById('start-screen');
 const restartBtn = document.getElementById('restart-btn');
 const startBtn = document.getElementById('start-btn');
 
+// Load obstacle images
+let bayerImg = new Image();
+bayerImg.src = '/bayer.svg';
+let sausageImg = new Image();
+sausageImg.src = '/sausage.svg';
+
 let gameRunning = false;
 let gameOver = false;
 let score = 0;
@@ -15,6 +21,7 @@ let speed = 5;
 let gravity = 0.6;
 let jumpPower = -15;
 let groundY = canvas.height - 50;
+let hitCooldown = 0;
 
 // Player
 let player = {
@@ -60,6 +67,9 @@ document.addEventListener('keyup', (e) => {
 startBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', restartGame);
 
+startBtn.addEventListener('click', startGame);
+restartBtn.addEventListener('click', restartGame);
+
 function startGame() {
   gameRunning = true;
   gameOver = false;
@@ -71,6 +81,7 @@ function startGame() {
   player.jumping = false;
   obstacles = [];
   collectibles = [];
+  hitCooldown = 0;
   startScreenEl.style.display = 'none';
   gameOverEl.style.display = 'none';
   update();
@@ -97,6 +108,9 @@ function duck() {
 
 function update() {
   if (!gameRunning) return;
+
+  // Decrement hit cooldown
+  if (hitCooldown > 0) hitCooldown--;
 
   // Player physics
   player.dy += gravity;
@@ -125,42 +139,43 @@ function update() {
 
   // Spawn obstacles and collectibles
   if (Math.random() < 0.01) {
-    let type = Math.random() < 0.5 ? 'bottle' : 'keg';
-    let height = type === 'bottle' ? 40 : 60;
-    obstacles.push({
-      x: canvas.width,
-      y: groundY - height,
-      width: 20,
-      height: height,
-      type: type
-    });
+    if (obstacles.length === 0 || obstacles[obstacles.length - 1].x < canvas.width - 150) {
+      let type = Math.random() < 0.6 ? 'bayer' : 'flying';
+      let y = type === 'bayer' ? groundY - 60 : groundY - 120;
+      let width = type === 'bayer' ? 30 : 60; // bayer is thinner
+      let height = type === 'bayer' ? 60 : 30; // sausage is flatter
+      obstacles.push({
+        x: canvas.width,
+        y: y,
+        width: width,
+        height: height,
+        type: type
+      });
+    }
   }
 
-  if (Math.random() < 0.005) {
-    let type = Math.random() < 0.5 ? 'hop' : 'beer';
+  if (Math.random() < 0.0005) {
     collectibles.push({
       x: canvas.width,
       y: groundY - 30,
       width: 20,
       height: 20,
-      type: type
+      type: 'hop'
     });
   }
 
   // Collision detection
   obstacles.forEach((obs) => {
-    if (player.x < obs.x + obs.width &&
+    if (hitCooldown === 0 && player.x < obs.x + obs.width &&
         player.x + player.width > obs.x &&
         player.y < obs.y + obs.height &&
         player.y + player.height > obs.y) {
       lives--;
+      hitCooldown = 30; // 30 frames invincibility
+      livesEl.classList.add('flash');
+      setTimeout(() => livesEl.classList.remove('flash'), 500);
       if (lives <= 0) {
         endGame();
-      } else {
-        // Reset player position or something
-        player.y = groundY - 50;
-        player.dy = 0;
-        player.jumping = false;
       }
     }
   });
@@ -170,11 +185,9 @@ function update() {
         player.x + player.width > col.x &&
         player.y < col.y + col.height &&
         player.y + player.height > col.y) {
-      if (col.type === 'hop') {
-        lives++;
-      } else if (col.type === 'beer') {
-        score += 100;
-      }
+      lives++;
+      livesEl.classList.add('gain');
+      setTimeout(() => livesEl.classList.remove('gain'), 500);
       collectibles.splice(i, 1);
     }
   });
@@ -184,8 +197,8 @@ function update() {
   speed += 0.001; // Gradually increase speed
 
   // Update UI
-  scoreEl.textContent = `Score: ${score}`;
-  livesEl.textContent = `Lives: ${lives}`;
+  scoreEl.textContent = `Punkte: ${Math.floor(score / 100)}`;
+  livesEl.textContent = `Leben: ${lives}`;
 
   // Draw
   draw();
@@ -199,33 +212,30 @@ function draw() {
   // Clear canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // Set font for emojis
+  ctx.font = '40px Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'bottom';
+
   // Draw ground
   ctx.fillStyle = '#8B4513';
   ctx.fillRect(0, groundY, canvas.width, 50);
 
-  // Draw player (beer mug)
-  ctx.fillStyle = '#FFD700';
-  ctx.fillRect(player.x, player.y, player.width, player.height);
-  // Handle
-  ctx.fillRect(player.x + player.width, player.y + 5, 5, 20);
+  // Draw player (beer mug emoji)
+  ctx.fillText('🍺', player.x + player.width/2, player.y + player.height);
 
   // Draw obstacles
   obstacles.forEach((obs) => {
-    ctx.fillStyle = obs.type === 'bottle' ? '#8B4513' : '#654321';
-    ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+    if (obs.type === 'bayer') {
+      ctx.drawImage(bayerImg, obs.x, obs.y, obs.width, obs.height);
+    } else if (obs.type === 'flying') {
+      ctx.drawImage(sausageImg, obs.x, obs.y, obs.width, obs.height);
+    }
   });
 
   // Draw collectibles
   collectibles.forEach((col) => {
-    if (col.type === 'hop') {
-      ctx.fillStyle = '#32CD32';
-      ctx.beginPath();
-      ctx.arc(col.x + col.width/2, col.y + col.height/2, col.width/2, 0, Math.PI * 2);
-      ctx.fill();
-    } else if (col.type === 'beer') {
-      ctx.fillStyle = '#A0522D';
-      ctx.fillRect(col.x, col.y, col.width, col.height);
-    }
+    ctx.fillText('🥨', col.x + col.width/2, col.y + col.height);
   });
 }
 
