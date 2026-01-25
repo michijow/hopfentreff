@@ -64,8 +64,13 @@ document.addEventListener('keyup', (e) => {
   }
 });
 
-startBtn.addEventListener('click', startGame);
-restartBtn.addEventListener('click', restartGame);
+// Touch events for mobile
+canvas.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  if (!gameRunning && !gameOver) startGame();
+  else if (gameOver) restartGame();
+  else jump();
+});
 
 startBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', restartGame);
