@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Beer Runner Game
+title: Hopfenheld
 permalink: /game/
 ---
 
@@ -14,7 +14,7 @@ permalink: /game/
       <button id="restart-btn">Nochmal</button>
     </div>
     <div id="start-screen">
-      <h2>Beer Runner</h2>
+      <h2>Hopfenheld</h2>
       <p>Vorsicht vorm durstigen Bayern und fliegenden Würsten! Sammle Brezeln für Extraleben!</p>
       <p>Drücke LEERTASTE zum Springen.</p>
       <button id="start-btn">Start</button>
