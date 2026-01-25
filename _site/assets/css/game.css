@@ -1,0 +1,88 @@
+#game-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid #333;
+  background-color: #f0f0f0;
+}
+
+#game-canvas {
+  display: block;
+  background-color: #87CEEB; /* Sky blue background */
+  touch-action: none; /* Prevent scrolling on touch */
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+}
+
+#game-ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#score, #lives {
+  margin-bottom: 5px;
+}
+
+#lives.flash {
+  animation: flash 0.5s;
+}
+
+#lives.gain {
+  animation: gain 0.5s;
+}
+
+@keyframes flash {
+  0% { color: red; transform: scale(1.2); }
+  50% { color: red; transform: scale(1.2); }
+  100% { color: #333; transform: scale(1); }
+}
+
+@keyframes gain {
+  0% { color: green; transform: scale(1.2); }
+  50% { color: green; transform: scale(1.2); }
+  100% { color: #333; transform: scale(1); }
+}
+
+#game-over, #start-screen {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  width: 600px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;}
+
+#start-screen h2 {
+  color: #8B4513; /* Brown for beer theme */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FFD700; /* Gold */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center !important;
+}
+
+button:hover {
+  background-color: #FFA500; /* Orange */
+}

@@ -2,12 +2,14 @@
 
 - title: Dahoam
   url: /
-- title: Hopfentreffen
+- title: Treffen
   url: /hopfentreffen/
 - title: Hopfenstrudl
   url: /hopfenstrudl/
 - title: Über uns
   url: /about/
+- title: Spiel
+  url: /game/
 # - title: Tags
 #   url: /tags/
 # - title: Recipes

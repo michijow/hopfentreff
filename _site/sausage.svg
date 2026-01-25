@@ -1,0 +1,31 @@
+<svg width="85" height="40" viewBox="26 46 76 30"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Weißwurst-Körper -->
+  <rect x="36" y="52" width="56" height="24" rx="12"
+        fill="#f5f0e6" stroke="#c9c2b4" stroke-width="2"/>
+
+  <!-- Wurst-Enden -->
+  <circle cx="36" cy="64" r="8" fill="#f5f0e6" stroke="#c9c2b4" stroke-width="2"/>
+  <circle cx="92" cy="64" r="8" fill="#f5f0e6" stroke="#c9c2b4" stroke-width="2"/>
+
+  <!-- Kräuterpunkte -->
+  <circle cx="52" cy="60" r="1.2" fill="#6c8b5a"/>
+  <circle cx="60" cy="68" r="1.2" fill="#6c8b5a"/>
+  <circle cx="72" cy="62" r="1.2" fill="#6c8b5a"/>
+  <circle cx="80" cy="70" r="1.2" fill="#6c8b5a"/>
+
+  <!-- Linker Flügel -->
+  <path d="M40 50
+           Q30 46 28 54
+           Q30 50 26 52
+           Q28 60 36 60 Z"
+        fill="#ffffff" stroke="#c0c0c0" stroke-width="1.5"/>
+
+  <!-- Rechter Flügel -->
+  <path d="M88 50
+           Q98 46 100 54
+           Q98 50 102 52
+           Q100 60 92 60 Z"
+        fill="#ffffff" stroke="#c0c0c0" stroke-width="1.5"/>
+</svg>
