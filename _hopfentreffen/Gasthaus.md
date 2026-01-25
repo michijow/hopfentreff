@@ -3,7 +3,7 @@ title: Gasthaus
 image: 
   path: /images/Gasthaus.jpg
   thumbnail: /images/Gasthaus.jpg
-  caption: Gasthaus
+  caption: "Gasthaus"
 #share: "false"
 comments: "true"
 bier_rating: 1
