@@ -1,0 +1,54 @@
+#game-container {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  border: 2px solid #333;
+  background-color: #f0f0f0;
+}
+
+#game-canvas {
+  display: block;
+  background-color: #87CEEB; /* Sky blue background */
+}
+
+#game-ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#score, #lives {
+  margin-bottom: 5px;
+}
+
+#game-over, #start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#start-screen h2 {
+  color: #8B4513; /* Brown for beer theme */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FFD700; /* Gold */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFA500; /* Orange */
+}

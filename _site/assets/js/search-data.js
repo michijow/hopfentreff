@@ -9,6 +9,16 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/hopfentreffen/2025-03-06-liebighof/"
       },{
+        "title": "Geisenhausen",
+        "excerpt":"Hopfentreff goes Geisenhausen. ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/hopfentreffen/2025-05-01-geisenhausen/"
+      },{
+        "title": "Rumpler",
+        "excerpt":"Wirtshaus im Glockenbachviertel. ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/hopfentreffen/2025-07-09-rumpler/"
+      },{
         "title": "Drei Mühlen",
         "excerpt":"Wirtshaus in der Isarvorstadt ","categories": [],
         "tags": [],
