@@ -7,7 +7,7 @@ image:
 #share: "false"
 #comments: "false"
 bier_rating: 5
-kaese_rating: 0
+kaese_rating: 3
 treffen_rating: 5
 ---
 
