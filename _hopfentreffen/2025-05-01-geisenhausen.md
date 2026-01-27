@@ -6,9 +6,9 @@ image:
   caption: "Photo from [Pexels](https://www.pexels.com)"
 #share: "false"
 comments: "true"
-bier_rating: 0
-kaese_rating: 0
-treffen_rating: 0
+bier_rating: 5
+kaese_rating: 5
+treffen_rating: 5
 ---
 
 Hopfentreff goes Geisenhausen.
