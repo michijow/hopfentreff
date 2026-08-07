@@ -17,17 +17,18 @@
 }
 
 .calendar-link {
-    display: inline-block;
+    display: inline;
     margin-top: 1rem;
-    padding: 0.75rem 1.25rem;
-    background: #1f77b4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    text-decoration: underline;
+    border-radius: 0;
+    font-weight: normal;
 }
 
 .calendar-link:hover,
 .calendar-link:focus {
-    background: #155d8a;
+    color: #1f77b4;
+    text-decoration: underline;
 }

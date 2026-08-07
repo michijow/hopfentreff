@@ -1,5 +1,5 @@
 ---
-title: Hopfen-Strudl
+title: Hopfenstrudl
 layout: page
 permalink: /hopfenstrudl/
 ---

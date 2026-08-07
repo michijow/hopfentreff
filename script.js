@@ -2,7 +2,7 @@ function getFirstThursdayOfMonth(year, month) {
     const date = new Date(year, month, 1);
     const day = date.getDay();
     const firstThursday = day === 4 ? 1 : ((4 - day + 7) % 7) + 1;
-    return new Date(year, month, firstThursday, 18, 45, 0);
+    return new Date(year, month, firstThursday, 18, 30, 0);
 }
 
 // Optional: Set a custom target date here (year, monthIndex (0–11), day, hour, minute)
@@ -28,10 +28,11 @@ function formatUtcCalendarDate(date) {
 
 function buildIcsContent(targetDate) {
     const eventStart = formatUtcCalendarDate(targetDate);
-    const eventEnd = formatUtcCalendarDate(new Date(targetDate.getTime() + 2 * 60 * 60 * 1000));
+    const eventEnd = formatUtcCalendarDate(new Date(targetDate.getTime() + 4 * 60 * 60 * 1000));
     const dtstamp = formatUtcCalendarDate(new Date());
     const uid = `hopfentreff-${targetDate.getTime()}@hopfentreff.de`;
     const dateString = targetDate.toLocaleDateString('de-DE');
+    const monthString = targetDate.toLocaleDateString('de-DE', { month: 'long' });
 
     return [
         'BEGIN:VCALENDAR',
@@ -45,7 +46,7 @@ function buildIcsContent(targetDate) {
         `DTSTART:${eventStart}`,
         `DTEND:${eventEnd}`,
         'SUMMARY:Hopfentreff',
-        `DESCRIPTION:Hopfentreff am ${dateString} um 18:45 Uhr`,
+        `DESCRIPTION:Hopfentreff im ${monthString}`,
         'END:VEVENT',
         'END:VCALENDAR'
     ].join('\r\n');
