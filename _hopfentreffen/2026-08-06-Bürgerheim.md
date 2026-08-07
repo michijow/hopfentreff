@@ -1,8 +1,8 @@
 ---
 title: Bürgerheim
 image: 
-  path: /images/2026-08-06-Bürgerhaus.jpg
-  thumbnail: /images/2026-08-06-Bürgerhaus.jpg
+  path: /images/2026-08-06-Bürgerheim.jpg
+  thumbnail: /images/2026-08-06-Bürgerheim.jpg
   caption: "Bürgerhaus"
 #share: "false"
 comments: "true"
