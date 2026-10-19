@@ -6,7 +6,7 @@ function getFirstThursdayOfMonth(year, month) {
 }
 
 // Optional: Set a custom target date here (year, monthIndex (0–11), day, hour, minute)
-let customDate = new Date(2026, 1, 11, 18, 30, 0); // February 11, 2026 at 18:30
+let customDate = new Date(2026, 20, 9, 18, 30, 0); // February 11, 2026 at 18:30
 let currentIcsUrl = null;
 
 function getTargetDate() {
