@@ -53,4 +53,19 @@ var store = [{
         "excerpt":"Bürgerheim ","categories": [],
         "tags": [],
         "url": "http://localhost:4000/hopfentreffen/2026-08-06-B%C3%BCrgerheim/"
+      },{
+        "title": "Mystikon",
+        "excerpt":"Mystikon ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/hopfentreffen/2026-09-03-Mystikon/"
+      },{
+        "title": "Wirtshaus Eder",
+        "excerpt":"Wirtshaus Eder ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/hopfentreffen/2026-10-20-Wirtshaus_Eder/"
+      },{
+        "title": "Die Pforte",
+        "excerpt":"Die Pforte ","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/hopfentreffen/2026-11-12-Die_Pforte/"
       },]

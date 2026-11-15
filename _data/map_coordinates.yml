@@ -1,0 +1,44 @@
+# Coordinates keyed by meeting filename (without .md).
+# Names, dates, and ratings are read directly from the matching Hopfentreffen entry.
+2025-02-06-schinken-peter:
+  lat: 48.1110865
+  lon: 11.5845279
+2025-03-06-liebighof:
+  lat: 48.1407803
+  lon: 11.5906741
+2025-05-01-geisenhausen:
+  lat: 48.4733985
+  lon: 12.2575827
+2025-07-09-rumpler:
+  lat: 48.1263723
+  lon: 11.5688012
+2025-11-04-Drei-muehlen:
+  lat: 48.1210905
+  lon: 11.557799
+2026-02-11-Poseidon:
+  lat: 48.1073226
+  lon: 11.5747668
+2026-03-05-Löwenbräu_am_Grünwalder:
+  lat: 48.1122016
+  lon: 11.5759343
+2026-05-07-ÖEins:
+  lat: 48.1217033
+  lon: 11.5403057
+2026-06-18-Wirtshaus_Bavariapark:
+  lat: 48.1318759
+  lon: 11.5437129
+2026-07-02-Zunfthaus:
+  lat: 48.1262198
+  lon: 11.5624679
+2026-08-06-Bürgerheim:
+  lat: 48.1359951
+  lon: 11.5375122
+2026-09-03-Mystikon:
+  lat: 48.1127482
+  lon: 11.5843987
+2026-10-20-Wirtshaus_Eder:
+  lat: 48.1363957
+  lon: 11.5304135
+2026-11-12-Die_Pforte:
+  lat: 48.1271709
+  lon: 11.5946
