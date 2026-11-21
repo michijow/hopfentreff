@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" title="Hopfentreff"><img src="{{ '/images/logo.png' | relative_url }}" alt="Hopfentreff"></a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      {%- assign nav = "Dahoam|/,Treffen|/hopfentreffen/,Karte|/karte/,Strudl|/hopfenstrudl/,Über uns|/about/,Spiel|/game/" | split: "," -%}
+      {%- for item in nav -%}
+        {%- assign p = item | split: "|" -%}
+        {%- assign active = false -%}
+        {%- if p[1] == "/" -%}{%- if page.url == "/" -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url contains p[1] -%}{%- assign active = true -%}{%- endif -%}
+        <a href="{{ p[1] | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ p[0] }}</a>
+      {%- endfor -%}
+    </nav>
+  </div>
+</header>

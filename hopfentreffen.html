@@ -1,0 +1,21 @@
+---
+layout: default
+title: Treffen
+permalink: /hopfentreffen/
+---
+{% assign all = site.hopfentreffen | sort: "date" | reverse %}
+<section class="wrap section">
+  <h1 class="h-xl">Hopfentreffen</h1>
+  <p class="lead lead--dark">Alle bisherigen Treffen im Überblick. Die Wirtshäuser wählt der „Hopfer“ von Hand aus.</p>
+  <div class="grid">
+    {%- for t in all limit: 9 %}{% include meeting-card.html t=t %}{% endfor %}
+  </div>
+  {%- if all.size > 9 %}
+  <details class="more">
+    <summary class="btn btn--outline-green">Ältere Treffen anzeigen ({{ all.size | minus: 9 }} weitere)</summary>
+    <div class="grid">
+      {%- for t in all offset: 9 %}{% include meeting-card.html t=t %}{% endfor %}
+    </div>
+  </details>
+  {%- endif %}
+</section>

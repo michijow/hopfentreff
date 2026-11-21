@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="{{ '/images/logo.png' | relative_url }}">
+  <link rel="preload" href="{{ '/assets/fonts/fraunces-800.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- if page.map %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  {%- endif %}
+</head>
+<body>
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {%- if page.map %}
+  {% assign all = site.hopfentreffen | sort: "date" | reverse %}
+  <script>
+    window.TREFFEN = [{% assign n = 0 %}{% for t in all %}{% assign key = t.path | split: "/" | last | split: "." | first %}{% assign c = site.data.map_coordinates[key] %}{% assign lat = t.lat | default: c.lat %}{% assign lon = t.lon | default: c.lon %}{% if lat and lon %}{% if n > 0 %},{% endif %}{"i":{{ n }},"title":{{ t.title | jsonify }},"url":{{ t.url | relative_url | jsonify }},"date":{{ t.date | date: "%d.%m.%Y" | jsonify }},"b":{{ t.bier_rating | jsonify }},"f":{{ t.kaese_rating | jsonify }},"m":{{ t.treffen_rating | jsonify }},"lat":{{ lat }},"lon":{{ lon }}}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}];
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+  {%- endif %}
+</body>
+</html>

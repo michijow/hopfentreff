@@ -1,8 +1,55 @@
 ---
-layout: home
-excerpt: "A simple and clean responsive Jekyll theme for words and photos."
-show_excerpts: true
-paginate: true
-entries_layout: list
+layout: default
+title: Dahoam
+map: true
 ---
+{% assign all = site.hopfentreffen | sort: "date" | reverse %}
+{% assign first = all | last %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Hopfentreff</p>
+      <h1 class="h-hero">Bier rein.<br>Glücklich sein.</h1>
+      <p class="lead">Stammtisch in den besten Wirtshäusern der Stadt. Der „Hopfer“ wählt jeden Treffpunkt sorgfältig aus – du lässt dich überraschen.</p>
+      <div class="btn-row">
+        <a class="btn btn--amber" href="{{ '/hopfentreffen/' | relative_url }}">Alle Treffen ansehen</a>
+        <a class="btn btn--outline-light" href="{{ '/about/' | relative_url }}">Über uns</a>
+      </div>
+    </div>
+    <div class="next-card">
+      <p class="eyebrow eyebrow--muted">Nächstes Hopfentreffen</p>
+      <p class="next-date">{{ site.data.next.date }}</p>
+      <p class="next-place">{{ site.data.next.place }}{% if site.data.next.time %} · {{ site.data.next.time }}{% endif %}</p>
+      <p class="muted small">Der Ort wird vom Hopfer rechtzeitig verraten.</p>
+    </div>
+  </div>
+</section>
 
+<section class="wrap stats-wrap">
+  <div class="stats">
+    <div><p class="stat">{{ all.size }}</p><p class="muted">Wirtshäuser besucht</p></div>
+    {%- if first %}<div><p class="stat">seit {{ first.date | date: "%Y" }}</p><p class="muted">dabei</p></div>{% endif %}
+    <div><p class="stat">1. Do</p><p class="muted">im Monat, immer</p></div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2 class="h-lg">Zuletzt eingekehrt</h2>
+    <a class="link-strong" href="{{ '/hopfentreffen/' | relative_url }}">Alle {{ all.size }} Treffen →</a>
+  </div>
+  <div class="grid">
+    {%- for t in all limit: 4 %}{% include meeting-card.html t=t %}{% endfor %}
+  </div>
+</section>
+
+<section class="wrap section section--tight-top">
+  <div class="panel">
+    <div class="panel-text">
+      <h2 class="h-lg">Unsere Wirtshaus-Karte</h2>
+      <p>Ein Pin pro Hopfentreff – tippe darauf und sieh Datum und Treffen.</p>
+      <a class="btn btn--green" href="{{ '/karte/' | relative_url }}">Karte öffnen</a>
+    </div>
+    <div id="map" class="map map--mini" data-mini="true" role="img" aria-label="Karte der besuchten Wirtshäuser"></div>
+  </div>
+</section>

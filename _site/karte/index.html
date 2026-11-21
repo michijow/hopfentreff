@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<!--
-    So Simple Jekyll Theme 3.2.0
-    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-    Free for personal and commercial use under the MIT license
-    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
--->
-<html lang="en-US" class="no-js">
-  <head>
+<!doctype html>
+<html lang="de">
+<head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-
-  
-    
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Wirtshaus-Karte | Hopfentreff</title>
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Karte | Hopfentreff</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Unsere Wirtshaus-Karte" />
+<meta property="og:title" content="Karte" />
 <meta property="og:locale" content="de_DE" />
 <meta name="description" content="Bier rein. Glücklich sein." />
 <meta property="og:description" content="Bier rein. Glücklich sein." />
@@ -27,489 +15,78 @@
 <meta property="og:site_name" content="Hopfentreff" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Unsere Wirtshaus-Karte" />
-<meta name="twitter:site" content="@" />
+<meta property="twitter:title" content="Karte" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Bier rein. Glücklich sein.","headline":"Unsere Wirtshaus-Karte","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.png"}},"url":"http://localhost:4000/karte/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Bier rein. Glücklich sein.","headline":"Karte","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.png"}},"url":"http://localhost:4000/karte/"}</script>
 <!-- End Jekyll SEO tag -->
 
-
-  
-
-  <script>
-    /* Cut the mustard */
-    if ( 'querySelector' in document && 'addEventListener' in window ) {
-      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
-    }
-  </script>
-
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/skins/default.css">
-  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
-  <link rel="alternate" type="application/atom+xml" title="Hopfentreff" href="/atom.xml">
-<!-- start custom head snippets -->
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/atom.xml" title="Hopfentreff" />
+  <link rel="icon" href="/images/logo.png">
+  <link rel="preload" href="/assets/fonts/fraunces-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
-
-
-  <body class="layout--page  unsere-wirtshaus-karte">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    
-  <div class="navigation-wrapper">
-    <a href="#menu-toggle" id="menu-toggle">Menu</a>
-    <nav id="primary-nav" class="site-nav animated drop">
-      <ul><li><a href="/">Dahoam</a></li><li><a href="/hopfentreffen/">Treffen</a></li><li><a href="/karte/">Karte</a></li><li><a href="/hopfenstrudl/">Strudl</a></li><li><a href="/about/">Über uns</a></li><li><a href="/game/">Spiel</a></li></ul>
-    </nav>
-  </div><!-- /.navigation-wrapper -->
-
-
-    <header class="masthead">
+<body>
+  <header class="site-header">
   <div class="wrap">
-    
-      <a href="/" class="site-logo" rel="home" title="Hopfentreff">
-        <img src="/images/logo.png" class="site-logo-img animated fadeInDown" alt="Hopfentreff">
-      </a>
-    
-    
-    
-      
-        <div class="site-title animated fadeIn"><a href="/">Hopfentreff</a></div>
-      
-      <p class="site-description animated fadeIn" itemprop="description">Bier rein. Glücklich sein.</p>
-    
+    <a class="brand" href="/" title="Hopfentreff"><img src="/images/logo.png" alt="Hopfentreff"></a>
+    <nav class="nav" aria-label="Hauptnavigation"><a href="/">Dahoam</a><a href="/hopfentreffen/">Treffen</a><a href="/karte/" aria-current="page">Karte</a><a href="/hopfenstrudl/">Strudl</a><a href="/about/">Über uns</a><a href="/game/">Spiel</a></nav>
   </div>
-</header><!-- /.masthead -->
+</header>
 
-
-    <main id="main" class="main-content" aria-label="Content">
-  <article>
+  <main id="main">
     
+<section class="wrap section">
+  <h1 class="h-xl">Wirtshaus-Karte</h1>
+  <p class="lead lead--dark">Alle bisherigen Hopfentreffen auf einer Karte. Wähle einen Pin oder einen Treffpunkt aus der Liste.</p>
+  <div class="btn-row">
+    <button class="btn btn--green" type="button" data-view="munich">München anzeigen</button>
+    <button class="btn btn--outline-green" type="button" data-view="all">Alle Orte anzeigen</button>
+  </div>
+  <div class="map-layout">
+    <div id="map" class="map" role="application" aria-label="Karte der besuchten Wirtshäuser"></div>
+    <aside class="map-list">
+      <h2 class="h-sm">Treffpunkte</h2>
+      <a href="/hopfentreffen/2026-11-12-Die_Pforte/" data-i="0"><span>Die Pforte</span><small>11/2026</small></a>
+      <a href="/hopfentreffen/2026-10-20-Wirtshaus_Eder/" data-i="1"><span>Wirtshaus Eder</span><small>10/2026</small></a>
+      <a href="/hopfentreffen/2026-09-03-Mystikon/" data-i="2"><span>Mystikon</span><small>09/2026</small></a>
+      <a href="/hopfentreffen/2026-08-06-B%C3%BCrgerheim/" data-i="3"><span>Bürgerheim</span><small>08/2026</small></a>
+      <a href="/hopfentreffen/2026-07-02-Zunfthaus/" data-i="4"><span>Zunfthaus</span><small>07/2026</small></a>
+      <a href="/hopfentreffen/2026-06-18-Wirtshaus_Bavariapark/" data-i="5"><span>Wirtshaus Bavariapark</span><small>06/2026</small></a>
+      <a href="/hopfentreffen/2026-05-07-%C3%96Eins/" data-i="6"><span>ÖEins</span><small>05/2026</small></a>
+      <a href="/hopfentreffen/2026-04-02-G%C3%B6rreshof/" data-i="7"><span>Görreshof</span><small>04/2026</small></a>
+      <a href="/hopfentreffen/2026-03-05-L%C3%B6wenbr%C3%A4u_am_Gr%C3%BCnwalder/" data-i="8"><span>Löwenbräu am Grünwalder</span><small>03/2026</small></a>
+      <a href="/hopfentreffen/2026-02-11-Poseidon/" data-i="9"><span>Poseidon</span><small>02/2026</small></a>
+      <a href="/hopfentreffen/2026-01-15-Steinheil/" data-i="10"><span>Steinheil</span><small>01/2026</small></a>
+      <a href="/hopfentreffen/2025-12-17-Menterschwaige/" data-i="11"><span>Menterschwaige</span><small>12/2025</small></a>
+      <a href="/hopfentreffen/2025-10-31-Zum_Riederstein/" data-i="12"><span>Zum Riederstein</span><small>10/2025</small></a>
+      <a href="/hopfentreffen/2025-10-09-Braunauer_Hof/" data-i="13"><span>Braunauer Hof</span><small>10/2025</small></a>
+      <a href="/hopfentreffen/2025-09-10-Das_Bad/" data-i="14"><span>Das Bad</span><small>09/2025</small></a>
+      <a href="/hopfentreffen/2025-08-07-Zwickl/" data-i="15"><span>Zwickl</span><small>08/2025</small></a>
+      <a href="/hopfentreffen/2025-07-09-rumpler/" data-i="16"><span>Rumpler</span><small>07/2025</small></a>
+      <a href="/hopfentreffen/2025-06-06-Harlachinger_Burschenfest/" data-i="17"><span>Harlachinger Burschenfest</span><small>06/2025</small></a>
+      <a href="/hopfentreffen/2025-05-01-geisenhausen/" data-i="18"><span>Geisenhausen</span><small>05/2025</small></a>
+      <a href="/hopfentreffen/2025-04-11-Drei-muehlen/" data-i="19"><span>Drei Mühlen</span><small>04/2025</small></a>
+      <a href="/hopfentreffen/2025-03-14-Donisl/" data-i="20"><span>Donisl</span><small>03/2025</small></a>
+      <a href="/hopfentreffen/2025-03-06-liebighof/" data-i="21"><span>Liebighof</span><small>03/2025</small></a>
+      <a href="/hopfentreffen/2025-02-06-schinken-peter/" data-i="22"><span>Schinken-Peter</span><small>02/2025</small></a>
+    </aside>
+  </div>
+</section>
 
-    <div class="page-wrapper">
-      <header class="page-header">
-        
-        
-          <h1 id="page-title" class="page-title">Unsere Wirtshaus-Karte</h1>
-        
-      </header>
-      <div class="page-content">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-<style>
-  .meetup-map-intro {
-    margin-bottom: 1rem;
-  }
-
-  .meetup-map-toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 1rem 0;
-  }
-
-  .meetup-map-toolbar button,
-  .meetup-map-list button {
-    border: 1px solid #c8c8c8;
-    border-radius: 0.35rem;
-    background: #fff;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    padding: 0.45rem 0.75rem;
-  }
-
-  .meetup-map-toolbar button:hover,
-  .meetup-map-list button:hover {
-    background: #f3f5ef;
-  }
-
-  #meetup-map {
-    height: min(68vh, 680px);
-    min-height: 420px;
-    border: 1px solid #d5d5d5;
-    border-radius: 0.5rem;
-    z-index: 0;
-  }
-
-  .meetup-map-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 0.5rem;
-    margin: 1rem 0;
-  }
-
-  .meetup-map-list button {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
-    text-align: left;
-  }
-
-  .meetup-map-list time {
-    color: #666;
-    white-space: nowrap;
-  }
-
-  .meetup-popup h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1rem;
-  }
-
-  .meetup-popup p {
-    margin: 0.25rem 0;
-  }
-
-  .meetup-popup a {
-    display: inline-block;
-    margin-top: 0.35rem;
-  }
-
-  @media (max-width: 600px) {
-    #meetup-map {
-      min-height: 360px;
-    }
-  }
-</style>
-
-<div class="meetup-map-intro">
-  <p>Alle bisherigen Hopfentreffen auf einer Karte. Wähle einen Pin oder einen Treffpunkt aus der Liste, um Datum und Bewertung zu sehen.</p>
-</div>
-
-<div class="meetup-map-toolbar" aria-label="Kartenausschnitt">
-  <button type="button" id="show-munich">München anzeigen</button>
-  <button type="button" id="show-all">Alle Orte anzeigen</button>
-</div>
-
-<div id="meetup-map" role="application" aria-label="Karte der Hopfentreffen"></div>
-
-<div class="meetup-map-list" id="meetup-map-list" aria-label="Hopfentreffen auswählen"></div>
-
-<p><small>Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a>.</small></p>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-<script>
-  (function () {
-    if (!window.L) return;
-
-    const places = [
-      
-        
-        
-        {
-          name: "Schinken-Peter",
-          date: "06.02.2025",
-          lat: 48.1110865,
-          lon: 11.5845279,
-          ratings: {
-            beer: 3,
-            food: 3,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2025-02-06-schinken-peter/"
-        },
-      
-        
-        
-        {
-          name: "Liebighof",
-          date: "06.03.2025",
-          lat: 48.1407803,
-          lon: 11.5906741,
-          ratings: {
-            beer: 4,
-            food: 4,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2025-03-06-liebighof/"
-        },
-      
-        
-        
-        {
-          name: "Geisenhausen",
-          date: "01.05.2025",
-          lat: 48.4733985,
-          lon: 12.2575827,
-          ratings: {
-            beer: 5,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2025-05-01-geisenhausen/"
-        },
-      
-        
-        
-        {
-          name: "Rumpler",
-          date: "09.07.2025",
-          lat: 48.1263723,
-          lon: 11.5688012,
-          ratings: {
-            beer: 4,
-            food: 4,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2025-07-09-rumpler/"
-        },
-      
-        
-        
-        {
-          name: "Drei Mühlen",
-          date: "04.11.2025",
-          lat: 48.1210905,
-          lon: 11.557799,
-          ratings: {
-            beer: 5,
-            food: 3,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2025-11-04-Drei-muehlen/"
-        },
-      
-        
-        
-        {
-          name: "Poseidon",
-          date: "11.02.2026",
-          lat: 48.1073226,
-          lon: 11.5747668,
-          ratings: {
-            beer: 5,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-02-11-Poseidon/"
-        },
-      
-        
-        
-        {
-          name: "Löwenbräu am Grünwalder",
-          date: "05.03.2026",
-          lat: 48.1122016,
-          lon: 11.5759343,
-          ratings: {
-            beer: 3,
-            food: 4,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-03-05-L%C3%B6wenbr%C3%A4u_am_Gr%C3%BCnwalder/"
-        },
-      
-        
-        
-        {
-          name: "ÖEins",
-          date: "07.05.2026",
-          lat: 48.1217033,
-          lon: 11.5403057,
-          ratings: {
-            beer: 4,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-05-07-%C3%96Eins/"
-        },
-      
-        
-        
-        {
-          name: "Wirtshaus Bavariapark",
-          date: "18.06.2026",
-          lat: 48.1318759,
-          lon: 11.5437129,
-          ratings: {
-            beer: 5,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-06-18-Wirtshaus_Bavariapark/"
-        },
-      
-        
-        
-        {
-          name: "Zunfthaus",
-          date: "02.07.2026",
-          lat: 48.1262198,
-          lon: 11.5624679,
-          ratings: {
-            beer: 5,
-            food: 4,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-07-02-Zunfthaus/"
-        },
-      
-        
-        
-        {
-          name: "Bürgerheim",
-          date: "06.08.2026",
-          lat: 48.1359951,
-          lon: 11.5375122,
-          ratings: {
-            beer: 5,
-            food: 4,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-08-06-B%C3%BCrgerheim/"
-        },
-      
-        
-        
-        {
-          name: "Mystikon",
-          date: "03.09.2026",
-          lat: 48.1127482,
-          lon: 11.5843987,
-          ratings: {
-            beer: 2,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-09-03-Mystikon/"
-        },
-      
-        
-        
-        {
-          name: "Wirtshaus Eder",
-          date: "20.10.2026",
-          lat: 48.1363957,
-          lon: 11.5304135,
-          ratings: {
-            beer: 5,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-10-20-Wirtshaus_Eder/"
-        },
-      
-        
-        
-        {
-          name: "Die Pforte",
-          date: "12.11.2026",
-          lat: 48.1271709,
-          lon: 11.5946,
-          ratings: {
-            beer: 5,
-            food: 5,
-            meetup: 5
-          },
-          url: "/hopfentreffen/2026-11-12-Die_Pforte/"
-        }
-      
-    ];
-
-    const map = L.map('meetup-map', { scrollWheelZoom: false });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    const markerGroup = L.featureGroup().addTo(map);
-    const munichPlaces = [];
-
-    function makePopup(place) {
-      const content = document.createElement('div');
-      content.className = 'meetup-popup';
-
-      const title = document.createElement('h3');
-      title.textContent = place.name;
-      content.appendChild(title);
-
-      const date = document.createElement('p');
-      date.textContent = place.date;
-      content.appendChild(date);
-
-      const rating = document.createElement('p');
-      rating.textContent = `Hopfen ${place.ratings.beer}/5 · Essen ${place.ratings.food}/5 · Treff ${place.ratings.meetup}/5`;
-      content.appendChild(rating);
-
-      const link = document.createElement('a');
-      link.href = place.url;
-      link.textContent = 'Zum Treffen';
-      content.appendChild(link);
-
-      return content;
-    }
-
-    places.forEach((place) => {
-      const marker = L.marker([place.lat, place.lon]).bindPopup(makePopup(place));
-      marker.addTo(markerGroup);
-      place.marker = marker;
-      if (place.lon < 12) munichPlaces.push(place);
-
-      const button = document.createElement('button');
-      button.type = 'button';
-      const name = document.createElement('span');
-      name.textContent = place.name;
-      const date = document.createElement('time');
-      date.textContent = place.date;
-      button.append(name, date);
-      button.addEventListener('click', () => {
-        map.flyTo([place.lat, place.lon], place.lon < 12 ? 15 : 12);
-        place.marker.openPopup();
-      });
-      document.getElementById('meetup-map-list').appendChild(button);
-    });
-
-    function showMunich() {
-      const bounds = L.latLngBounds(munichPlaces.map((place) => [place.lat, place.lon]));
-      map.fitBounds(bounds.pad(0.12), { maxZoom: 13 });
-    }
-
-    document.getElementById('show-munich').addEventListener('click', showMunich);
-    document.getElementById('show-all').addEventListener('click', () => {
-      map.fitBounds(markerGroup.getBounds().pad(0.12));
-    });
-    showMunich();
-  })();
-</script>
-
-
-
-        
-      </div>
-    </div>
-  </article>
-</main>
-
-
-    <footer id="footer" class="site-footer">
-  <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-<div class="copyright">
-    
-      <p>&copy; 2026 Hopfentreff. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
-    
+  </main>
+  <footer class="site-footer">
+  <div class="wrap">
+    <span class="footer-brand">Hopfentreff</span>
+    <span>© 2026 Hopfentreff · Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></span>
   </div>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-
-
-  </body>
-
+  
+  <script>
+    window.TREFFEN = [{"i":0,"title":"Die Pforte","url":"/hopfentreffen/2026-11-12-Die_Pforte/","date":"12.11.2026","b":5,"f":5,"m":5,"lat":48.1271709,"lon":11.5946},{"i":1,"title":"Wirtshaus Eder","url":"/hopfentreffen/2026-10-20-Wirtshaus_Eder/","date":"20.10.2026","b":5,"f":5,"m":5,"lat":48.1363957,"lon":11.5304135},{"i":2,"title":"Mystikon","url":"/hopfentreffen/2026-09-03-Mystikon/","date":"03.09.2026","b":2,"f":5,"m":5,"lat":48.1127482,"lon":11.5843987},{"i":3,"title":"Bürgerheim","url":"/hopfentreffen/2026-08-06-B%C3%BCrgerheim/","date":"06.08.2026","b":5,"f":4,"m":5,"lat":48.1359951,"lon":11.5375122},{"i":4,"title":"Zunfthaus","url":"/hopfentreffen/2026-07-02-Zunfthaus/","date":"02.07.2026","b":5,"f":4,"m":5,"lat":48.1262198,"lon":11.5624679},{"i":5,"title":"Wirtshaus Bavariapark","url":"/hopfentreffen/2026-06-18-Wirtshaus_Bavariapark/","date":"18.06.2026","b":5,"f":5,"m":5,"lat":48.1318759,"lon":11.5437129},{"i":6,"title":"ÖEins","url":"/hopfentreffen/2026-05-07-%C3%96Eins/","date":"07.05.2026","b":4,"f":5,"m":5,"lat":48.1217033,"lon":11.5403057},{"i":7,"title":"Görreshof","url":"/hopfentreffen/2026-04-02-G%C3%B6rreshof/","date":"02.04.2026","b":4,"f":5,"m":5,"lat":48.15614,"lon":11.56205},{"i":8,"title":"Löwenbräu am Grünwalder","url":"/hopfentreffen/2026-03-05-L%C3%B6wenbr%C3%A4u_am_Gr%C3%BCnwalder/","date":"05.03.2026","b":3,"f":4,"m":5,"lat":48.1122016,"lon":11.5759343},{"i":9,"title":"Poseidon","url":"/hopfentreffen/2026-02-11-Poseidon/","date":"11.02.2026","b":5,"f":5,"m":5,"lat":48.1073226,"lon":11.5747668},{"i":10,"title":"Steinheil","url":"/hopfentreffen/2026-01-15-Steinheil/","date":"15.01.2026","b":4,"f":4,"m":5,"lat":48.14985,"lon":11.56423},{"i":11,"title":"Menterschwaige","url":"/hopfentreffen/2025-12-17-Menterschwaige/","date":"17.12.2025","b":4,"f":5,"m":5,"lat":48.081417,"lon":11.545833},{"i":12,"title":"Zum Riederstein","url":"/hopfentreffen/2025-10-31-Zum_Riederstein/","date":"31.10.2025","b":4,"f":4,"m":5,"lat":48.12432,"lon":11.60622},{"i":13,"title":"Braunauer Hof","url":"/hopfentreffen/2025-10-09-Braunauer_Hof/","date":"09.10.2025","b":4,"f":4,"m":5,"lat":48.1345,"lon":11.58094},{"i":14,"title":"Das Bad","url":"/hopfentreffen/2025-09-10-Das_Bad/","date":"10.09.2025","b":5,"f":5,"m":5,"lat":48.1363957,"lon":11.53041},{"i":15,"title":"Zwickl","url":"/hopfentreffen/2025-08-07-Zwickl/","date":"07.08.2025","b":5,"f":4,"m":5,"lat":48.13556,"lon":11.58056},{"i":16,"title":"Rumpler","url":"/hopfentreffen/2025-07-09-rumpler/","date":"09.07.2025","b":4,"f":4,"m":5,"lat":48.1263723,"lon":11.5688012},{"i":17,"title":"Harlachinger Burschenfest","url":"/hopfentreffen/2025-06-06-Harlachinger_Burschenfest/","date":"06.06.2025","b":5,"f":4,"m":5,"lat":48.087008,"lon":11.555305},{"i":18,"title":"Geisenhausen","url":"/hopfentreffen/2025-05-01-geisenhausen/","date":"01.05.2025","b":5,"f":5,"m":5,"lat":48.4733985,"lon":12.2575827},{"i":19,"title":"Drei Mühlen","url":"/hopfentreffen/2025-04-11-Drei-muehlen/","date":"11.04.2025","b":5,"f":3,"m":5,"lat":48.1210905,"lon":11.557799},{"i":20,"title":"Donisl","url":"/hopfentreffen/2025-03-14-Donisl/","date":"14.03.2025","b":5,"f":4,"m":5,"lat":48.13766,"lon":11.57491},{"i":21,"title":"Liebighof","url":"/hopfentreffen/2025-03-06-liebighof/","date":"06.03.2025","b":4,"f":4,"m":5,"lat":48.1407803,"lon":11.5906741},{"i":22,"title":"Schinken-Peter","url":"/hopfentreffen/2025-02-06-schinken-peter/","date":"06.02.2025","b":3,"f":3,"m":5,"lat":48.1110865,"lon":11.5845279}];
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/assets/js/map.js"></script>
+</body>
 </html>

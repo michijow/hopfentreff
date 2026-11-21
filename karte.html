@@ -1,0 +1,32 @@
+---
+layout: default
+title: Karte
+permalink: /karte/
+map: true
+---
+{% assign all = site.hopfentreffen | sort: "date" | reverse %}
+<section class="wrap section">
+  <h1 class="h-xl">Wirtshaus-Karte</h1>
+  <p class="lead lead--dark">Alle bisherigen Hopfentreffen auf einer Karte. Wähle einen Pin oder einen Treffpunkt aus der Liste.</p>
+  <div class="btn-row">
+    <button class="btn btn--green" type="button" data-view="munich">München anzeigen</button>
+    <button class="btn btn--outline-green" type="button" data-view="all">Alle Orte anzeigen</button>
+  </div>
+  <div class="map-layout">
+    <div id="map" class="map" role="application" aria-label="Karte der besuchten Wirtshäuser"></div>
+    <aside class="map-list">
+      <h2 class="h-sm">Treffpunkte</h2>
+      {%- assign n = 0 %}
+      {%- for t in all %}
+      {%- assign key = t.path | split: "/" | last | split: "." | first %}
+      {%- assign c = site.data.map_coordinates[key] %}
+      {%- assign lat = t.lat | default: c.lat %}
+      {%- assign lon = t.lon | default: c.lon %}
+      {%- if lat and lon %}
+      <a href="{{ t.url | relative_url }}" data-i="{{ n }}"><span>{{ t.title }}</span><small>{{ t.date | date: "%m/%Y" }}</small></a>
+      {%- assign n = n | plus: 1 %}
+      {%- endif %}
+      {%- endfor %}
+    </aside>
+  </div>
+</section>

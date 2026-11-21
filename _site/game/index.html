@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<!--
-    So Simple Jekyll Theme 3.2.0
-    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-    Free for personal and commercial use under the MIT license
-    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
--->
-<html lang="en-US" class="no-js">
-  <head>
+<!doctype html>
+<html lang="de">
+<head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-
-  
-    
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Hopfenheld | Hopfentreff</title>
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Hopfenheld" />
@@ -28,85 +16,25 @@
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hopfenheld" />
-<meta name="twitter:site" content="@" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","description":"Bier rein. Glücklich sein.","headline":"Hopfenheld","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/logo.png"}},"url":"http://localhost:4000/game/"}</script>
 <!-- End Jekyll SEO tag -->
 
-
-  
-
-  <script>
-    /* Cut the mustard */
-    if ( 'querySelector' in document && 'addEventListener' in window ) {
-      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
-    }
-  </script>
-
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/skins/default.css">
-  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
-  <link rel="alternate" type="application/atom+xml" title="Hopfentreff" href="/atom.xml">
-<!-- start custom head snippets -->
-
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/atom.xml" title="Hopfentreff" />
+  <link rel="icon" href="/images/logo.png">
+  <link rel="preload" href="/assets/fonts/fraunces-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
-
-  <body class="layout--page  hopfenheld">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    
-  <div class="navigation-wrapper">
-    <a href="#menu-toggle" id="menu-toggle">Menu</a>
-    <nav id="primary-nav" class="site-nav animated drop">
-      <ul><li><a href="/">Dahoam</a></li><li><a href="/hopfentreffen/">Treffen</a></li><li><a href="/karte/">Karte</a></li><li><a href="/hopfenstrudl/">Strudl</a></li><li><a href="/about/">Über uns</a></li><li><a href="/game/">Spiel</a></li></ul>
-    </nav>
-  </div><!-- /.navigation-wrapper -->
-
-
-    <header class="masthead">
+<body>
+  <header class="site-header">
   <div class="wrap">
-    
-      <a href="/" class="site-logo" rel="home" title="Hopfentreff">
-        <img src="/images/logo.png" class="site-logo-img animated fadeInDown" alt="Hopfentreff">
-      </a>
-    
-    
-    
-      
-        <div class="site-title animated fadeIn"><a href="/">Hopfentreff</a></div>
-      
-      <p class="site-description animated fadeIn" itemprop="description">Bier rein. Glücklich sein.</p>
-    
+    <a class="brand" href="/" title="Hopfentreff"><img src="/images/logo.png" alt="Hopfentreff"></a>
+    <nav class="nav" aria-label="Hauptnavigation"><a href="/">Dahoam</a><a href="/hopfentreffen/">Treffen</a><a href="/karte/">Karte</a><a href="/hopfenstrudl/">Strudl</a><a href="/about/">Über uns</a><a href="/game/" aria-current="page">Spiel</a></nav>
   </div>
-</header><!-- /.masthead -->
+</header>
 
-
-    <main id="main" class="main-content" aria-label="Content">
-  <article>
-    
-
-    <div class="page-wrapper">
-      <header class="page-header">
-        
-        
-          <h1 id="page-title" class="page-title">Hopfenheld</h1>
-        
-      </header>
-      <div class="page-content">
-        <div id="game-container">
+  <main id="main">
+    <div id="game-container">
   <canvas id="game-canvas" width="800" height="400"></canvas>
   <div id="game-ui">
     <div id="score">Punkte: 0</div>
@@ -129,30 +57,13 @@
 <link rel="stylesheet" href="/assets/css/game.css" />
 
 
-
-        
-      </div>
-    </div>
-  </article>
-</main>
-
-
-    <footer id="footer" class="site-footer">
-  <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-<div class="copyright">
-    
-      <p>&copy; 2026 Hopfentreff. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
-    
+  </main>
+  <footer class="site-footer">
+  <div class="wrap">
+    <span class="footer-brand">Hopfentreff</span>
+    <span>© 2026 Hopfentreff · Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></span>
   </div>
 </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
-
-
-  </body>
-
+</body>
 </html>

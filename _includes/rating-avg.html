@@ -1,0 +1,4 @@
+{%- if include.t.bier_rating and include.t.kaese_rating and include.t.treffen_rating -%}
+{%- assign s = include.t.bier_rating | plus: include.t.kaese_rating | plus: include.t.treffen_rating -%}
+{{- s | divided_by: 3.0 | round: 1 | replace: ".", "," -}}
+{%- endif -%}

@@ -1,0 +1,12 @@
+<a class="card" href="{{ include.t.url | relative_url }}">
+  {%- assign img = include.t.image.path | default: include.t.image -%}
+  {%- if img -%}
+  <img class="card-img" src="{{ img | relative_url }}" alt="" loading="lazy">
+  {%- else -%}
+  <div class="card-img card-img--empty" aria-hidden="true"></div>
+  {%- endif -%}
+  <div class="card-body">
+    <p class="card-meta">{% include date-de.html date=include.t.date %}</p>
+    <h3>{{ include.t.title }}</h3>
+  </div>
+</a>

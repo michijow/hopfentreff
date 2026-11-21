@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{% assign all = site.hopfentreffen | sort: "date" %}
+{% for t in all %}{% if t.url == page.url %}
+  {% unless forloop.first %}{% assign pi = forloop.index0 | minus: 1 %}{% assign prev = all[pi] %}{% endunless %}
+  {% unless forloop.last %}{% assign ni = forloop.index0 | plus: 1 %}{% assign next = all[ni] %}{% endunless %}
+{% endif %}{% endfor %}
+<article class="wrap narrow section">
+  <a class="back" href="{{ '/hopfentreffen/' | relative_url }}">← Alle Treffen</a>
+  <p class="eyebrow eyebrow--muted">{% include date-de.html date=page.date %}</p>
+  <h1 class="h-xl">{{ page.title }}</h1>
+  {%- assign img = page.image.path | default: page.image %}
+  {%- if img %}
+  <figure class="detail-fig">
+    <img class="detail-img" src="{{ img | relative_url }}" alt="{{ page.title }}">
+    {%- if page.image.caption %}<figcaption>{{ page.image.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>{% endif %}
+  </figure>
+  {%- endif %}
+  <div class="detail-grid">
+    <div class="detail-text">
+      <h2 class="h-md">Der Abend</h2>
+      {{ content }}
+    </div>
+    {%- if page.bier_rating or page.kaese_rating or page.treffen_rating %}
+    {%- capture avg %}{% include rating-avg.html t=page %}{% endcapture %}
+    <aside class="rating">
+      <h2 class="h-sm">Bewertung</h2>
+      {%- if page.bier_rating %}<p class="rating-row"><span>Hopfen</span><strong>{{ page.bier_rating }}/5</strong></p>{% endif %}
+      {%- if page.kaese_rating %}<p class="rating-row"><span>Essen</span><strong>{{ page.kaese_rating }}/5</strong></p>{% endif %}
+      {%- if page.treffen_rating %}<p class="rating-row"><span>Treff</span><strong>{{ page.treffen_rating }}/5</strong></p>{% endif %}
+      {%- if avg != "" %}<p class="rating-total"><span>Gesamt</span><strong>{{ avg }}/5</strong></p>{% endif %}
+    </aside>
+    {%- endif %}
+  </div>
+  <nav class="detail-nav" aria-label="Weitere Treffen">
+    {% if prev %}<a href="{{ prev.url | relative_url }}">← {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+    {% assign pkey = page.path | split: "/" | last | split: "." | first %}{% assign pc = site.data.map_coordinates[pkey] %}{% if page.lat or pc %}<a href="{{ '/karte/' | relative_url }}">Auf der Karte zeigen</a>{% endif %}
+    {% if next %}<a href="{{ next.url | relative_url }}">{{ next.title }} →</a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>
