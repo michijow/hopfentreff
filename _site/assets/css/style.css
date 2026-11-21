@@ -145,10 +145,39 @@ p{margin:0 0 1em}
 .narrow .eyebrow--muted{margin-top:32px;margin-bottom:8px}
 
 @media (max-width:600px){
-  .wrap{padding:0 20px}
-  .section{padding-top:48px;padding-bottom:48px}
-  .brand img{height:64px}
-  .panel{padding:28px 24px}
+  body{font-size:16px}
+  .wrap{padding-left:20px;padding-right:20px}
+
+  /* Header: kleines Logo, Menü einzeilig */
+  .site-header .wrap{gap:4px;padding-top:10px;padding-bottom:0}
+  .brand img{height:56px}
+  .nav{width:100%;flex-wrap:nowrap;justify-content:space-between;gap:0 12px;font-size:15px;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:none;display:flex;align-items:center;min-height:44px;padding:0}
+
+  /* Hero und Karte „Ziel des Spiels“ / „Nächstes Treffen“ */
+  .hero-grid{gap:24px;padding-top:28px;padding-bottom:56px}
+  .eyebrow{margin-bottom:10px}
+  .lead{font-size:18px;margin:16px 0 24px}
+  .next-card{padding:24px}
+  .next-date{font-size:32px}
+  .goal{font-size:18px;line-height:1.5}
+
+  /* Abstände */
+  .section{padding-top:40px;padding-bottom:40px}
+  .section--tight-top{padding-top:0}
+  .section--tight-bottom{padding-bottom:0}
+  .section-head{margin-bottom:20px}
+  .grid,.grid--steps,.grid--two{gap:16px}
+  .tile,.step{padding:20px}
+  .step{gap:16px}
+  .step-n{width:40px;height:40px;font-size:18px}
+  .panel{padding:24px;gap:24px}
+  .stats{padding:20px 24px;gap:16px 32px}
+  .stat{font-size:34px}
+  .detail-grid{gap:24px;margin-top:28px}
+  .h-md{font-size:26px}
   .map{height:420px}
+  .map--mini{height:240px}
 }
 @media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .2s}}
