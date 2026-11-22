@@ -1,6 +1,6 @@
 {%- comment -%}
   Berechnet das nächste Hopfentreffen und setzt diese Variablen:
-  nm_label (z. B. "Donnerstag, 3. Dezember"), nm_ymd (20261203), nm_hh, nm_mm, nm_endh2, nm_place
+  nm_label (z. B. "Donnerstag, 3 Dezember"), nm_ymd (20261203), nm_hh, nm_mm, nm_time_label, nm_endh2, nm_place
   Standard: erster Donnerstag im Monat. Ausnahme: in _data/next.yml  date: "JJJJ-MM-TT"
 {%- endcomment -%}
 {%- assign nm_now = site.time | date: "%s" | plus: 0 -%}
@@ -34,13 +34,15 @@
 
 {%- assign nm_mi = nm_ts | date: "%-m" | minus: 1 -%}
 {%- assign nm_wd = nm_ts | date: "%w" | plus: 0 -%}
-{%- capture nm_label -%}{{ nm_days[nm_wd] }}, {{ nm_ts | date: "%-d" }}. {{ nm_months[nm_mi] }}{%- endcapture -%}
+{%- capture nm_label -%}{{ nm_days[nm_wd] }}, {{ nm_ts | date: "%-d" }} {{ nm_months[nm_mi] }}{%- endcapture -%}
 {%- assign nm_ymd = nm_ts | date: "%Y%m%d" -%}
+{%- assign nm_iso_date = nm_ts | date: "%Y-%m-%d" -%}
 
 {%- assign nm_time = site.data.next.time | append: "" | remove: "Uhr" | strip -%}
 {%- if nm_time == "" -%}{%- assign nm_time = "19:00" -%}{%- endif -%}
 {%- assign nm_hh = nm_time | split: ":" | first -%}
 {%- assign nm_mm = nm_time | split: ":" | last -%}
+{%- assign nm_time_label = nm_hh | append: ":" | append: nm_mm | append: " Uhr" -%}
 {%- assign nm_dur = site.data.next.duration | default: 3 -%}
 {%- assign nm_endh = nm_hh | plus: nm_dur -%}
 {%- if nm_endh < 10 -%}{%- assign nm_endh2 = "0" | append: nm_endh -%}{%- else -%}{%- assign nm_endh2 = nm_endh -%}{%- endif -%}
