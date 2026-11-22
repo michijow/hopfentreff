@@ -1,0 +1,47 @@
+{%- comment -%}
+  Berechnet das nächste Hopfentreffen und setzt diese Variablen:
+  nm_label (z. B. "Donnerstag, 3. Dezember"), nm_ymd (20261203), nm_hh, nm_mm, nm_endh2, nm_place
+  Standard: erster Donnerstag im Monat. Ausnahme: in _data/next.yml  date: "JJJJ-MM-TT"
+{%- endcomment -%}
+{%- assign nm_now = site.time | date: "%s" | plus: 0 -%}
+{%- assign nm_months = "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember" | split: "," -%}
+{%- assign nm_days = "Sonntag,Montag,Dienstag,Mittwoch,Donnerstag,Freitag,Samstag" | split: "," -%}
+{%- assign nm_found = false -%}
+{%- assign nm_ts = 0 -%}
+
+{%- comment -%} 1. Abweichendes Datum aus _data/next.yml, solange es nicht vorbei ist {%- endcomment -%}
+{%- assign nm_override = site.data.next.date | append: "" -%}
+{%- if nm_override != "" -%}
+  {%- assign nm_o = nm_override | date: "%s" | plus: 0 -%}
+  {%- assign nm_oend = nm_o | plus: 86400 -%}
+  {%- if nm_oend > nm_now -%}{%- assign nm_ts = nm_o -%}{%- assign nm_found = true -%}{%- endif -%}
+{%- endif -%}
+
+{%- comment -%} 2. Sonst der erste Donnerstag dieses oder des nächsten Monats {%- endcomment -%}
+{%- unless nm_found -%}
+  {%- assign nm_d0 = site.time | date: "%Y-%m-01" -%}
+  {%- assign nm_d1 = nm_d0 | date: "%s" | plus: 2764800 | date: "%Y-%m-01" -%}
+  {%- assign nm_cands = nm_d0 | append: "," | append: nm_d1 | split: "," -%}
+  {%- for nm_d in nm_cands -%}
+    {%- assign nm_wd0 = nm_d | date: "%w" | plus: 0 -%}
+    {%- assign nm_off = 4 | minus: nm_wd0 | plus: 7 | modulo: 7 -%}
+    {%- assign nm_offs = nm_off | times: 86400 -%}
+    {%- assign nm_c = nm_d | date: "%s" | plus: nm_offs -%}
+    {%- assign nm_cend = nm_c | plus: 86400 -%}
+    {%- if nm_found == false and nm_cend > nm_now -%}{%- assign nm_found = true -%}{%- assign nm_ts = nm_c -%}{%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}
+
+{%- assign nm_mi = nm_ts | date: "%-m" | minus: 1 -%}
+{%- assign nm_wd = nm_ts | date: "%w" | plus: 0 -%}
+{%- capture nm_label -%}{{ nm_days[nm_wd] }}, {{ nm_ts | date: "%-d" }}. {{ nm_months[nm_mi] }}{%- endcapture -%}
+{%- assign nm_ymd = nm_ts | date: "%Y%m%d" -%}
+
+{%- assign nm_time = site.data.next.time | append: "" | remove: "Uhr" | strip -%}
+{%- if nm_time == "" -%}{%- assign nm_time = "19:00" -%}{%- endif -%}
+{%- assign nm_hh = nm_time | split: ":" | first -%}
+{%- assign nm_mm = nm_time | split: ":" | last -%}
+{%- assign nm_dur = site.data.next.duration | default: 3 -%}
+{%- assign nm_endh = nm_hh | plus: nm_dur -%}
+{%- if nm_endh < 10 -%}{%- assign nm_endh2 = "0" | append: nm_endh -%}{%- else -%}{%- assign nm_endh2 = nm_endh -%}{%- endif -%}
+{%- assign nm_place = site.data.next.place | append: "" | strip -%}

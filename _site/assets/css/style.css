@@ -116,7 +116,9 @@ p{margin:0 0 1em}
 .closing{text-align:center;font:600 28px var(--serif);margin:0}
 .panel{display:flex;flex-wrap:wrap;gap:32px 40px;align-items:center;background:var(--sand);border-radius:24px;padding:40px}
 .panel-text{flex:1 1 320px}
-.panel-text p{margin-bottom:24px}
+.panel-text h2{margin-bottom:12px}
+.panel-text p{margin-bottom:12px}
+.panel-text .btn{margin-top:12px}
 .panel>.map{flex:1 1 420px}
 
 /* Karte */
@@ -144,6 +146,15 @@ p{margin:0 0 1em}
 .detail-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:56px;padding-top:24px;border-top:1px solid #D8CDB4;font-weight:600}
 .narrow .eyebrow--muted{margin-top:32px;margin-bottom:8px}
 
+/* Nächstes Treffen: Uhrzeit und Kalender-Button */
+.next-time{display:flex;align-items:center;margin:10px 0 4px;font-size:20px}
+.next-time svg{flex:none;margin-right:8px}
+.next-place{margin:10px 0 24px}
+.next-note{margin:0 0 24px}
+.btn--block{display:flex;align-items:center;justify-content:center;width:100%}
+.btn--block svg{flex:none;margin-right:10px}
+.next-card .next-hint{margin:10px 0 0;text-align:center;font-size:13px}
+
 @media (max-width:600px){
   body{font-size:16px}
   .wrap{padding-left:20px;padding-right:20px}
@@ -151,7 +162,7 @@ p{margin:0 0 1em}
   /* Header: kleines Logo, Menü einzeilig */
   .site-header .wrap{gap:4px;padding-top:10px;padding-bottom:0}
   .brand img{height:56px}
-  .nav{width:100%;flex-wrap:nowrap;justify-content:space-between;gap:0 12px;font-size:15px;overflow-x:auto;scrollbar-width:none}
+  .nav{width:100%;flex-wrap:nowrap;justify-content:space-between;gap:0 8px;font-size:14px;overflow-x:auto;scrollbar-width:none}
   .nav::-webkit-scrollbar{display:none}
   .nav a{flex:none;display:flex;align-items:center;min-height:44px;padding:0}
 
@@ -179,5 +190,9 @@ p{margin:0 0 1em}
   .h-md{font-size:26px}
   .map{height:420px}
   .map--mini{height:240px}
+}
+@media (max-width:360px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .nav{gap:0 6px;font-size:13px}
 }
 @media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .2s}}

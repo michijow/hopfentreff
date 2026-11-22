@@ -10,49 +10,71 @@
   border-radius:20px;
   background:var(--sand);
   box-shadow:0 8px 24px rgba(30,27,22,.16);
+  user-select:none;
+  -webkit-user-select:none;
 }
 #game-canvas{
   display:block;
   width:100%;
   height:auto;
   touch-action:none; /* kein Scrollen beim Tippen */
-  background:linear-gradient(#F6F0E4,#E8DFCB);
+  background:#F6F0E4;
 }
 
-/* HUD und Overlays liegen über dem Spielfeld */
+/* Anzeige über dem Spielfeld */
 #game-ui{position:absolute;inset:0;pointer-events:none;font-family:var(--sans)}
-#score,#lives{
+.hud{
   position:absolute;
-  top:12px;
-  padding:4px 14px;
-  border-radius:999px;
-  background:rgba(246,240,228,.92);
+  top:calc(6.5% + 8px);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 14px;
+  background:rgba(246,240,228,.96);
   color:var(--ink);
-  font-weight:600;
-  font-size:16px;
-  box-shadow:var(--shadow);
+  border:2px solid var(--green);
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(30,27,22,.2);
 }
-#score{left:12px;transform-origin:left center}
-#lives{right:12px;transform-origin:right center}
+#score{left:14px;transform-origin:left center}
+#lives{right:14px;flex-direction:column;align-items:flex-start;gap:2px;transform-origin:right center}
+.hud-ic{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--amber)}
+.hud-ic svg{width:22px;height:22px}
+.hud-txt{display:flex;flex-direction:column}
+.hud-lab{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.1}
+.hud-num{font:800 26px/1 var(--serif);font-variant-numeric:tabular-nums}
+
+/* Leben als Brezeln */
+.pz-row{display:flex;gap:4px;line-height:0}
+.pz{display:block;width:28px;height:23px}
+.pz-g,.pz-o,.pz-i{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pz-o{stroke:#7A4413;stroke-width:5.4}
+.pz-i{stroke:#C97C2A;stroke-width:3.4}
+.pz-s{fill:#FFFDF6}
+.pz.lost .pz-o{stroke:#9C927F}
+.pz.lost .pz-i{stroke:#DDD5C3}
+.pz.lost .pz-s{fill:#F1ECDF}
+
 #lives.flash{animation:hh-flash .5s}
 #lives.gain{animation:hh-gain .5s}
 @keyframes hh-flash{
-  0%,50%{background:#C0392B;color:#fff;transform:scale(1.15)}
-  100%{background:rgba(246,240,228,.92);color:var(--ink);transform:scale(1)}
+  0%,50%{background:#E9B3AB;transform:scale(1.12)}
+  100%{background:rgba(246,240,228,.96);transform:scale(1)}
 }
 @keyframes hh-gain{
-  0%,50%{background:var(--hop-light);color:var(--ink);transform:scale(1.15)}
-  100%{background:rgba(246,240,228,.92);color:var(--ink);transform:scale(1)}
+  0%,50%{background:var(--hop-light);transform:scale(1.12)}
+  100%{background:rgba(246,240,228,.96);transform:scale(1)}
 }
 
+/* Start- und Verloren-Karte */
 #game-over,#start-screen{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:min(560px,calc(100% - 32px));
+  width:min(460px,calc(100% - 32px));
   box-sizing:border-box;
-  padding:24px 28px;
+  padding:20px 24px;
   flex-direction:column;
   align-items:center;
   justify-content:center;
@@ -64,18 +86,23 @@
   pointer-events:auto;
   z-index:10;
 }
-#start-screen{display:flex} /* #game-over steuert das Spiel per style.display */
-#game-over h2,#start-screen h2{margin:0 0 8px;font-size:36px;font-weight:800;color:var(--green)}
-#start-screen p{margin:0 0 10px;font-size:17px}
+#start-screen{display:flex} /* #game-over wird per JavaScript ein- und ausgeblendet */
+#game-over h2,#start-screen h2{margin:0 0 6px;font-size:34px;font-weight:800;color:var(--green)}
+#start-screen p,#final-score{margin:0 0 8px;font-size:16px;line-height:1.45}
 #game-over .btn,#start-screen .btn{margin-top:8px}
 
 /* Handy: Texte und Buttons unter dem Spielfeld statt darüber */
 @media (max-width:640px){
   #game-container{border-width:2px;border-radius:16px}
   #game-ui{position:static;pointer-events:auto}
-  #score,#lives{top:8px;padding:2px 12px;font-size:14px}
+  .hud{top:18px;gap:6px;padding:3px 10px;border-radius:12px}
   #score{left:8px}
   #lives{right:8px}
+  .hud-ic{width:26px;height:26px}
+  .hud-ic svg{width:17px;height:17px}
+  .hud-lab{font-size:9px}
+  .hud-num{font-size:20px}
+  .pz{width:20px;height:16px}
   #game-over,#start-screen{
     position:static;
     transform:none;
@@ -86,5 +113,5 @@
     background:var(--cream);
   }
   #game-over h2,#start-screen h2{font-size:28px}
-  #start-screen p{font-size:16px}
+  #start-screen p,#final-score{font-size:16px}
 }
