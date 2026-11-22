@@ -1,88 +1,90 @@
-#game-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border: 2px solid #333;
-  background-color: #f0f0f0;
+/* Hopfenheld – Spielseite (ergänzt style.css, wird nur auf /game/ geladen) */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+#game-container{
+  position:relative;
+  max-width:800px;
+  margin:0 auto;
+  overflow:hidden;
+  border:3px solid var(--green);
+  border-radius:20px;
+  background:var(--sand);
+  box-shadow:0 8px 24px rgba(30,27,22,.16);
+}
+#game-canvas{
+  display:block;
+  width:100%;
+  height:auto;
+  touch-action:none; /* kein Scrollen beim Tippen */
+  background:linear-gradient(#F6F0E4,#E8DFCB);
 }
 
-#game-canvas {
-  display: block;
-  background-color: #87CEEB; /* Sky blue background */
-  touch-action: none; /* Prevent scrolling on touch */
-  width: 100%;
-  height: auto;
-  max-width: 800px;
+/* HUD und Overlays liegen über dem Spielfeld */
+#game-ui{position:absolute;inset:0;pointer-events:none;font-family:var(--sans)}
+#score,#lives{
+  position:absolute;
+  top:12px;
+  padding:4px 14px;
+  border-radius:999px;
+  background:rgba(246,240,228,.92);
+  color:var(--ink);
+  font-weight:600;
+  font-size:16px;
+  box-shadow:var(--shadow);
+}
+#score{left:12px;transform-origin:left center}
+#lives{right:12px;transform-origin:right center}
+#lives.flash{animation:hh-flash .5s}
+#lives.gain{animation:hh-gain .5s}
+@keyframes hh-flash{
+  0%,50%{background:#C0392B;color:#fff;transform:scale(1.15)}
+  100%{background:rgba(246,240,228,.92);color:var(--ink);transform:scale(1)}
+}
+@keyframes hh-gain{
+  0%,50%{background:var(--hop-light);color:var(--ink);transform:scale(1.15)}
+  100%{background:rgba(246,240,228,.92);color:var(--ink);transform:scale(1)}
 }
 
-#game-ui {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #333;
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+#game-over,#start-screen{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:min(560px,calc(100% - 32px));
+  box-sizing:border-box;
+  padding:24px 28px;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:rgba(246,240,228,.97);
+  color:var(--ink);
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  pointer-events:auto;
+  z-index:10;
 }
+#start-screen{display:flex} /* #game-over steuert das Spiel per style.display */
+#game-over h2,#start-screen h2{margin:0 0 8px;font-size:36px;font-weight:800;color:var(--green)}
+#start-screen p{margin:0 0 10px;font-size:17px}
+#game-over .btn,#start-screen .btn{margin-top:8px}
 
-#score, #lives {
-  margin-bottom: 5px;
-}
-
-#lives.flash {
-  animation: flash 0.5s;
-}
-
-#lives.gain {
-  animation: gain 0.5s;
-}
-
-@keyframes flash {
-  0% { color: red; transform: scale(1.2); }
-  50% { color: red; transform: scale(1.2); }
-  100% { color: #333; transform: scale(1); }
-}
-
-@keyframes gain {
-  0% { color: green; transform: scale(1.2); }
-  50% { color: green; transform: scale(1.2); }
-  100% { color: #333; transform: scale(1); }
-}
-
-#game-over, #start-screen {
-  position: absolute;
-  top: 200px;
-  left: 400px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 10;  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;}
-
-#start-screen h2 {
-  color: #8B4513; /* Brown for beer theme */
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #FFD700; /* Gold */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-h1 {
-  text-align: center !important;
-}
-
-button:hover {
-  background-color: #FFA500; /* Orange */
+/* Handy: Texte und Buttons unter dem Spielfeld statt darüber */
+@media (max-width:640px){
+  #game-container{border-width:2px;border-radius:16px}
+  #game-ui{position:static;pointer-events:auto}
+  #score,#lives{top:8px;padding:2px 12px;font-size:14px}
+  #score{left:8px}
+  #lives{right:8px}
+  #game-over,#start-screen{
+    position:static;
+    transform:none;
+    width:auto;
+    padding:20px 20px 24px;
+    border-radius:0;
+    box-shadow:none;
+    background:var(--cream);
+  }
+  #game-over h2,#start-screen h2{font-size:28px}
+  #start-screen p{font-size:16px}
 }
