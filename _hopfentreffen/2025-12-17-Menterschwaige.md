@@ -1,8 +1,8 @@
 ---
 title: Menterschwaige
 image: 
-  path: /images/2025-12-17-Menterschwaige.jpg
-  thumbnail: /images/2025-12-17-Menterschwaige_tn.jpg
+  path: /images/beer.jpg
+  thumbnail: /images/beer_tn.jpg
   caption: "Menterschwaige"
 #share: "false"
 comments: "true"

@@ -1,8 +1,8 @@
 ---
 title: Braunauer Hof
 image: 
-  path: /images/2025-10-09-Braunauer_Hof.jpg
-  thumbnail: /images/2025-10-09-Braunauer_Hof_tn.jpg
+  path: /images/beer.jpg
+  thumbnail: /images/beer_tn.jpg
   caption: "Braunauer Hof"
 #share: "false"
 comments: "true"

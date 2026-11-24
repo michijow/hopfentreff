@@ -1,8 +1,8 @@
 ---
 title: Zum Riederstein
 image: 
-  path: /images/2025-10-31-Zum_Riederstein.jpg
-  thumbnail: /images/2025-10-31-Zum_Riederstein_tn.jpg
+  path: /images/beer.jpg
+  thumbnail: /images/beer_tn.jpg
   caption: "Zum Riederstein"
 #share: "false"
 comments: "true"

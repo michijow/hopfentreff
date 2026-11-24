@@ -1,8 +1,8 @@
 ---
 title: Steinheil
 image: 
-  path: /images/2026-01-15-Steinheil.jpg
-  thumbnail: /images/2026-01-15-Steinheil_tn.jpg
+  path: /images/beer.jpg
+  thumbnail: /images/beer_tn.jpg
   caption: "Steinheil"
 #share: "false"
 comments: "true"
